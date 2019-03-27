@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Top 20 public colleges in the United States</h1>
+
+<h2>Click any college to learn more!</h2>
+
+<p>Information taken from the <a href="https://www.usnews.com/best-colleges/rankings/national-universities/top-public"> U.S. News and World Report</a></p>
+
+<div id="list">
+  <ul>
+  {% for pair in pairs %}
+      <li><a href="{{ url_for( 'detail', num=pair[0] ) }}">{{ pair[1] }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}

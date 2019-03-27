@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ c['Name'] }}</h1>
+
+<h2>Ranking: {{ c['Ranking']}}</h2>
+
+<img src="{{ url_for('static', filename='images/'+c['Pic']) }}">
+
+<div id="collegeInfo">
+<p class="marker">Location:</p><p class="info"><span> {{ c['Location']}}</span></p>
+<p class="marker">Mascot:</p><p class="info"><span>{{ c['Nickname']}}</span></p>
+<p class="marker">Enrolled students:</p><p class="info"><span> {{ c['Students']}}</span></p>
+</div>
+
+<p><a href="{{ c['Wiki']}}" target="_blank">View the full Wikipedia entry</a></p>
+<p><a href="{{ url_for('index') }}">Return to the full list</a></p>
+
+
+{% endblock %}
